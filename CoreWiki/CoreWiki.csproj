@@ -12,4 +12,11 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <None Include="wwwroot\css\StyleSheet.css" />
+    <None Include="wwwroot\Images\800px-Photomontage_Cincinnati_V01.jpg" />
+    <None Include="wwwroot\Images\Cincinnati-Zoo.jpg" />
+  </ItemGroup>
+
 </Project>
