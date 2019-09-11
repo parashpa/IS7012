@@ -1,0 +1,63 @@
+﻿@page
+@model CoreCrud.Pages.Collectibles.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Collectible</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Collectible.Title" class="control-label"></label>
+                <input asp-for="Collectible.Title" class="form-control" />
+                <span asp-validation-for="Collectible.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Collectible.ReleaseDate" class="control-label"></label>
+                <input asp-for="Collectible.ReleaseDate" class="form-control" />
+                <span asp-validation-for="Collectible.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Collectible.Genre" class="control-label"></label>
+                <input asp-for="Collectible.Genre" class="form-control" />
+                <span asp-validation-for="Collectible.Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Collectible.Forsale" /> @Html.DisplayNameFor(model => model.Collectible.Forsale))
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Collectible.Price" class="control-label"></label>
+                <input asp-for="Collectible.Price" class="form-control" />
+                <span asp-validation-for="Collectible.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Collectible.Author" class="control-label"></label>
+                <input asp-for="Collectible.Author" class="form-control" />
+                <span asp-validation-for="Collectible.Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Collectible.ManufacturerID" class="control-label"></label>
+                <select asp-for="Collectible.ManufacturerID" class ="form-control" asp-items="ViewBag.ManufacturerID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
