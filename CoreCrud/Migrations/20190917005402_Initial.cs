@@ -34,8 +34,7 @@ namespace CoreCrud.Migrations
                     Forsale = table.Column<bool>(nullable: false),
                     Price = table.Column<decimal>(nullable: false),
                     Author = table.Column<string>(nullable: true),
-                    PublisherID = table.Column<int>(nullable: false),
-                    ManufacturerID = table.Column<int>(nullable: true)
+                    ManufacturerID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -45,7 +44,7 @@ namespace CoreCrud.Migrations
                         column: x => x.ManufacturerID,
                         principalTable: "Manufacturer",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

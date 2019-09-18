@@ -1,0 +1,49 @@
+﻿@page
+@model CoreCrud.Pages.AuctionModel
+@{
+    ViewData["Title"] = "Auction";
+}
+
+<h2 class="text-center text-success">List of Collectibles</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Title Of the Book</th>
+            <th>Release Date</th>
+            <th>Genre</th>
+            <th>If For sale</th>
+            <th>Price</th>
+            <th>Author</th>
+            <th>Manufacturer/Publisher Name</th>
+            <th>If recommended to buy</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var code in Model.Collectibles)
+        {
+        <tr>
+            <td>@code.Title</td>
+            <td>@code.ReleaseDate</td>
+            <td>@code.Genre</td>
+            <td>@code.Forsale</td>
+            <td>@code.Price</td>
+            <td>@code.Author</td>
+            <td>@code.Manufacturer.PublisherName</td>
+            <td>
+                @if (code.Price > 2)
+                {
+                    <text>Price is High, not recommended to buy</text>
+                }
+                else
+                {
+                    <text>Price is Low, recommended to buy</text>
+                }
+            </td>
+        </tr>
+
+
+        }
+    </tbody>
+</table>
+

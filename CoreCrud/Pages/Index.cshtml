@@ -4,16 +4,53 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
 
-<img src="~/Images/Books.jpg" alt="books_image" width="800" height="480" />
+<h3>Manufacturer Profile</h3>
+<ul>
+   <li style="font-size:1.1em"><a href="ManufacturerProfile?id=1">Click on the link to see Manufacturer/Publisher Profile #1</a></li>
+   <li style="font-size:1.1em"><a href="ManufacturerProfile?id=2">Click on the link to see Manufacturer/Publisher Profile #2</a></li>
+   <li style="font-size:1.1em"><a href="ManufacturerProfile?id=3">Click on the link to see Manufacturer/Publisher Profile #3</a></li>
+   <li style="font-size:1.1em"><a href="ManufacturerProfile?id=4">Click on the link to see Manufacturer/Publisher Profile #4</a></li>
+   <li style="font-size:1.1em"><a href="ManufacturerProfile?id=5">Click on the link to see Manufacturer/Publisher Profile #5</a></li>
+</ul>
+<h3>List of collectibles</h3>
+<ul>
+    <li style="font-size:1.2em"><a href="Auction">Click on the link to see Auction Page</a></li>
+</ul>
+
+<img src="~/Images/Book1.jpg" alt="book1" width="300" height="100" />
+<img src="~/Images/Book2.jpg" alt="book2" width="300" height="100" />
+<img src="~/Images/Book3.jpg" alt="book3" width="300" height="100" />
 
 <p class="small" style="font-size:1.1em">
-    Looking for the next great book to sink your teeth into? Look no further.
+            Looking for the next great book to sink your teeth into? Look no further.
 
-    As the year rolls on, you may find yourself wanting to set aside time to catch up on reading. We have good news for you, digital bookworms — you can get in a good read in no waste of time. The internet is filled with free e-book resources so you can download new reads and old classics from the comfort of your iPad.
+            As the year rolls on, you may find yourself wanting to set aside time to catch up on reading. We have good news for you, digital bookworms — you can get in a good read in no waste of time. The internet is filled with free e-book resources so you can download new reads and old classics from the comfort of your iPad.
 </p>
 
+<h3>Statistics</h3>
+<table border="1" width="600">
+    <tbody>
+    <tr>
+        <td> Number of books available in Collectible dataset </td>
+        <td>@Model.Total_num_of_books_available</td>
+    </tr>
+    <tr>
+        <td> Number of Publishers available in Manufacturer dataset </td>
+        <td>@Model.Total_num_of_publishers_available</td>
+    </tr>
+    <tr>
+        <td> Number of books for sale </td>
+        <td>@Model.Number_of_books_for_sale</td>
+    </tr>
+    <tr>
+        <td> Number of Authors </td>
+        <td>@Model.Number_of_Authors</td>
+    </tr>
+    <tr>
+        <td> Typeof Genre available </td>
+        <td>@Model.Genre_available</td>
+    </tr>
+
+</tbody>
+</table>

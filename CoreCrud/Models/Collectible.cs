@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,5 +21,13 @@ namespace CoreCrud.Models
         public int ManufacturerID { get; set; }
 
         public Manufacturer Manufacturer { get; set; }
+
+        // READONLY PROPERTIES
+        [NotMapped]
+        public bool IsDateAvailable
+        {
+            // TRUE/FALSE: TRUE IF DATE IS AVAILABLE
+            get { return ReleaseDate != null; }
+        }
     }
 }

@@ -1,0 +1,50 @@
+﻿@page
+@model CoreCrud.Pages.ManufacturerProfileModel
+@{
+    ViewData["Title"] = "ManufacturerProfile";
+}
+
+<h1>Manufacturer Profile</h1>
+
+<h2 class="text-center text-success">@Model.Manufacturer.PublisherName</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Title Of the Book</th>
+                <th>Release Date</th>
+                <th>Genre</th>
+                <th>If For sale</th>
+                <th>Price</th>
+                <th>Author</th>
+                <th>Is Date Available</th>
+                <th>Is Book Available for Sale</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var code in Model.Manufacturer.Collectibles)
+            {
+                <tr>
+                    <td>@code.Title</td>
+                    <td>@code.ReleaseDate</td>
+                    <td>@code.Genre</td>
+                    <td>@code.Forsale</td>
+                    <td>@code.Price</td>
+                    <td>@code.Author</td>
+                    <td>@code.IsDateAvailable</td>
+                    <td>
+                        @if(code.Forsale)
+                        {
+                            <text>Available for sale</text>
+                        }
+                        else
+                        {
+                            <text>Not available for sale</text>
+                        }
+                    </td>
+                </tr>
+
+                
+            }
+        </tbody>
+    </table>
