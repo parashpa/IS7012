@@ -14,8 +14,8 @@ namespace CoreCrud.Models
         public string PublisherName { get; set; }
         public string Location { get; set; }
 
+        [Required(ErrorMessage = "Please provide a 5 digit zipcode")]
         [RegularExpression(@"^[\d]{5}$")]
-
         [Display(Name = "Zip code")]
         public int Zipcode { get; set; }
         public ICollection<Collectible> Collectibles { get; set; }
