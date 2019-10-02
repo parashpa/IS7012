@@ -5,8 +5,8 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
+<h2>List of collectibles</h2>
+<img src="~/Images/Book4.jpg" alt="Book4" width="300" height="100" float="right" />
 <p>
     <a asp-page="Create">Create New</a>
 </p>
@@ -59,7 +59,7 @@
                 @Html.DisplayFor(modelItem => item.Author)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Manufacturer.ID)
+                @Html.DisplayFor(modelItem => item.Manufacturer.PublisherName)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |

@@ -5,9 +5,8 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Collectible</h4>
+<h1>Add collectible entry</h1>
+<img src="~/Images/Add_here.jpg" alt="Add_here" width="300" height="100" float="right"/>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -30,7 +29,7 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Collectible.Forsale" /> @Html.DisplayNameFor(model => model.Collectible.Forsale))
+                    <input class="form-check-input" asp-for="Collectible.Forsale" /> @Html.DisplayNameFor(model => model.Collectible.Forsale)
                 </label>
             </div>
             <div class="form-group">

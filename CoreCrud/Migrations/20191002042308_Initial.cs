@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CoreCrud.Migrations
@@ -13,9 +12,10 @@ namespace CoreCrud.Migrations
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     PublisherName = table.Column<string>(nullable: true),
-                    Location = table.Column<string>(nullable: true)
+                    Location = table.Column<string>(nullable: true),
+                    Zipcode = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -27,10 +27,10 @@ namespace CoreCrud.Migrations
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Title = table.Column<string>(nullable: true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(nullable: false),
                     ReleaseDate = table.Column<DateTime>(nullable: true),
-                    Genre = table.Column<string>(nullable: true),
+                    Genre = table.Column<string>(maxLength: 20, nullable: true),
                     Forsale = table.Column<bool>(nullable: false),
                     Price = table.Column<decimal>(nullable: false),
                     Author = table.Column<string>(nullable: true),

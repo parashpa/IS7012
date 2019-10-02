@@ -5,7 +5,7 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Details of the item</h1>
 
 <div>
     <h4>Collectible</h4>
@@ -51,7 +51,7 @@
             @Html.DisplayNameFor(model => model.Collectible.Manufacturer)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Collectible.Manufacturer.ID)
+            @Html.DisplayFor(model => model.Collectible.Manufacturer.PublisherName)
         </dd>
     </dl>
 </div>
