@@ -1,0 +1,67 @@
+﻿@page
+@model FinalProject.Pages.Memberships.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h3>Enter new member details</h3>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Membership.FirstName" class="control-label"></label>
+                <input asp-for="Membership.FirstName" class="form-control" />
+                <span asp-validation-for="Membership.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Membership.LastName" class="control-label"></label>
+                <input asp-for="Membership.LastName" class="form-control" />
+                <span asp-validation-for="Membership.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Membership.MemberFrom" class="control-label"></label>
+                <input asp-for="Membership.MemberFrom" class="form-control" />
+                <span asp-validation-for="Membership.MemberFrom" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Membership.ActiveMember" /> @Html.DisplayNameFor(model => model.Membership.ActiveMember))
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Membership.Weight" class="control-label"></label>
+                <input asp-for="Membership.Weight" class="form-control" />
+                <span asp-validation-for="Membership.Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Membership.Age" class="control-label"></label>
+                <input asp-for="Membership.Age" class="form-control" />
+                <span asp-validation-for="Membership.Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Membership.StartDate" class="control-label"></label>
+                <input asp-for="Membership.StartDate" class="form-control" />
+                <span asp-validation-for="Membership.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Membership.PlanID" class="control-label"></label>
+                <select asp-for="Membership.PlanID" class ="form-control" asp-items="ViewBag.PlanID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

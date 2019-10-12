@@ -1,0 +1,31 @@
+﻿@page
+@model FinalProject.Pages.MembershipProfileModel
+@{
+    ViewData["Title"] = "MembershipProfile";
+}
+
+<h3 class="text-center text-success">@Model.Membership.FirstName</h3>
+<h5 class="text-center text-success">(@Model.Membership.MemberisAnAdult)</h5>
+<h5 class="text-center text-success">Note: @Model.Membership.IfNotActive</h5>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Apparel Bought</th>
+            <th>Amount Spent</th>
+            <th>Apparel ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var code in Model.Membership.TuckShops)
+        {
+            <tr>
+                <td>@code.ApparelName</td>
+                <td>@code.Price</td>
+                <td>@code.ApparelID</td>
+
+            </tr>
+
+
+        }
+    </tbody>
+</table>

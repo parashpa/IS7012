@@ -1,0 +1,35 @@
+﻿@page
+@model FinalProject.Pages.TrainerProfileModel
+@{
+    ViewData["Title"] = "TrainerProfile";
+}
+
+<h1>Trainer Specific Plans</h1>
+
+<h2 class="text-center text-success">@Model.Trainer.TrainerName</h2>
+<h4 class="text-center text-success">Experience Level: @Model.Trainer.IsTrainerExperienced</h4>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Plan Name</th>
+                    <th>Class Day</th>
+                    <th>Duration of the Plan</th>
+                    <th>Fees</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var code in Model.Trainer.Plans)
+                {
+                    <tr>
+                        <td>@code.PlanName</td>
+                        <td>@code.Day</td>
+                        <td>@code.Duration</td>
+                        <td>@code.Price</td>
+                    </tr>
+
+
+                }
+            </tbody>
+        </table>
+

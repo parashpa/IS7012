@@ -1,0 +1,62 @@
+﻿@page
+@model FinalProject.Pages.SearchModel
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search</h1>
+
+
+<form action="" method="POST" style="margin-top: 50px;">
+    <div class="form-group">
+        <label class="control-label" for="search">Please enter item here</label>
+        <input type="text" class="form-control" name="search" id="search" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Search"  class="btn btn-danger" />
+    </div>
+</form>
+
+
+
+@if (Model.SearchCompleted)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Apparell ID</th>
+                <th>Apparell Name</th>
+                <th>Price</th>
+                <th>MembershipID</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                @foreach (var code in Model.TuckShops)
+                {
+            <tr>
+                <td>@code.ID</td>
+                <td>@code.ApparelID</td>
+                <td>@code.ApparelName</td>
+                <td>@code.Price</td>
+                <td>@code.MembershipID</td>
+                <td>@code.Membership.FirstName</td>
+                <td>@code.Membership.LastName</td>
+            </tr>
+                }
+           
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">
+        <p>
+            Enter the search terms into the box and click <strong>Search Members</strong>
+        </p>
+    </div>
+}
+

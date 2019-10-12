@@ -1,0 +1,33 @@
+﻿@page
+@model FinalProject.Pages.SignUpModel
+@{
+    ViewData["Title"] = "SignUp";
+}
+
+<h1>SignUp</h1>
+
+
+<form action="Output">
+    First name:<br>
+    <input type="text" name="firstname" required><br>
+    Last name:<br>
+    <input type="text" name="lastname" required><br>
+
+    Gender: <br>
+    <input type="radio" name="gender" value="male" > Male<br>
+    <input type="radio" name="gender" value="female"> Female<br>
+    <input type="radio" name="gender" value="other"> Other<br>
+
+    Age: <br />
+    <input type="number" name="Age" required><br>
+
+    Date: <br />
+    <input type="date" name="Date" min="2019-10-10" max="2019-10-31" required><br>
+
+    Time: <br />
+    <input type="time" name="Time" min="09:00" max="18:00" required><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
